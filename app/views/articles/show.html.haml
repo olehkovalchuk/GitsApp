@@ -1,0 +1,6 @@
+%h1 Article name: #{@article.title}
+%h3 Author: #{@author}
+%h4 tags:
+-@tags.each do |tag|
+    %span
+    =link_to tag.name, tag_path(tag)

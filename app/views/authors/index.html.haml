@@ -1,0 +1,7 @@
+%h1 All Authors
+%ul
+    -@authorsOrder.each do |author|
+        %li
+            =link_to author.name, author_path(author)
+-for i in 0..@authors.length/6 do 
+    =link_to (i + 1), authors_path(page: i)

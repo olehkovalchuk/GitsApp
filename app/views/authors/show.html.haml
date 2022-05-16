@@ -1,0 +1,17 @@
+%h1=@author.name
+%h3 email: #{@author.email}
+%h3 city: #{@author.city}
+%h3 adress: #{@author.adress}
+%h3 birthday: #{@author.birthDate.strftime('%d-%m-%Y')}
+-@articlesOrder.each do |article|
+    %h4    
+        %li
+            =link_to article.title, article_path(article, authorId: article.author_id)
+            %span tags:
+            -article.tags.each do |tag|
+                =link_to tag.name, tag_path(tag)
+
+-for i in 0..@articles.length/6 do 
+    =link_to (i + 1), author_path(@author, page: i)
+
+            
